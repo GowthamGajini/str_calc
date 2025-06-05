@@ -6,6 +6,6 @@ class Calculator
 	def add
 		return 0 if @str.empty?
 
-		@str.to_i
+		@str.split(",").map(&:to_i).sum
 	end
 end
