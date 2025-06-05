@@ -7,4 +7,11 @@ RSpec.describe "String Calculator" do
 			expect(calc.add).to eq(0)
 		end
 	end
+
+	context "Executing with single integer" do
+		it "Should return the integer" do
+			calc = Calculator.new("1")
+			expect(calc.add).to eq(1)
+		end
+	end
 end

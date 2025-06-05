@@ -4,6 +4,8 @@ class Calculator
 	end
 
 	def add
-		0
+		return 0 if @str.empty?
+
+		@str.to_i
 	end
 end
