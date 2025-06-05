@@ -28,4 +28,11 @@ RSpec.describe "String Calculator" do
 			expect(calc.add).to eq(6)
 		end
 	end
+
+	context "Executing with custom delimiter in string" do
+		it "Should return the sum of all integers seperated by delimiter" do
+			calc = Calculator.new("//;\n1;3")
+			expect(calc.add).to eq(4)
+		end
+	end
 end
