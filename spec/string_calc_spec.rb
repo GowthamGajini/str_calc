@@ -21,4 +21,11 @@ RSpec.describe "String Calculator" do
 			expect(calc.add).to eq(3)
 		end
 	end
+
+	context "Executing with new line operator in string" do
+		it "Should return the sum of all integers" do
+			calc = Calculator.new("1\n2,3")
+			expect(calc.add).to eq(6)
+		end
+	end
 end
