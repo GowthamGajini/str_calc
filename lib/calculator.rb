@@ -4,5 +4,6 @@ class Calculator
 	end
 
 	def add
+		0
 	end
 end
