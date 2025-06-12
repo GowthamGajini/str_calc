@@ -42,6 +42,13 @@ RSpec.describe "String Calculator for sum" do
 			expect(calc.add).to eq("negative numbers not allowed -1,-2,-3")
 		end
 	end
+
+	context "Input string having numbers bigger than 1000" do
+		it "Should return sum exclusing numbers greater than 1000" do
+			calc = Calculator.new("1,999,1001")
+			expect(calc.add).to eq(1000)
+		end
+	end
 end
 
 RSpec.describe "String Calculator for multiplication" do
