@@ -49,6 +49,13 @@ RSpec.describe "String Calculator for sum" do
 			expect(calc.add).to eq(1000)
 		end
 	end
+
+	context "Input string having delimiter of any length" do
+		it "Should return sum of numbers" do
+			calc = Calculator.new("//[***]\n1***2***3")
+			expect(calc.add).to eq(6)
+		end
+	end
 end
 
 RSpec.describe "String Calculator for multiplication" do
