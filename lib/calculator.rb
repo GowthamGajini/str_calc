@@ -13,7 +13,7 @@ class Calculator
 		  negative_inputs = input_list.select(&:negative?).join(",")
 		  "negative numbers not allowed #{negative_inputs}"
 		else
-			input_list.sum if negative_inputs.empty?
+			input_list.select{|n| n < 1000 }.sum if negative_inputs.empty?
 		end
 	end
 
