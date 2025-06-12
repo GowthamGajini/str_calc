@@ -1,6 +1,6 @@
 require_relative '../lib/calculator.rb'
 
-RSpec.describe "String Calculator" do
+RSpec.describe "String Calculator for sum" do
 	context "Executing with empty string" do
 		it "Should return 0" do
 			calc = Calculator.new("")
@@ -40,6 +40,22 @@ RSpec.describe "String Calculator" do
 		it "Should return error message if any negative number present" do
 			calc = Calculator.new("-1,-2,-3,4,5")
 			expect(calc.add).to eq("negative numbers not allowed -1,-2,-3")
+		end
+	end
+end
+
+RSpec.describe "String Calculator for multiplication" do
+	context "Executing with empty string" do
+		it "Should return 0" do
+			calc = Calculator.new("")
+			expect(calc.multiply).to eq(0)
+		end
+	end
+
+	context "Executing with two integers string" do
+		it "Should return product of two integer" do
+			calc = Calculator.new("2,2")
+			expect(calc.multiply).to eq(4)
 		end
 	end
 end
