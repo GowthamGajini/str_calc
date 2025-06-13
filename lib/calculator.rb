@@ -27,9 +27,17 @@ class Calculator
 
 	def process_input_str
 		delimiter = ","
-		delimiter, @str = @str.split("\n") if @str.include?("//")
-		delimiter = delimiter[-1]
+		delimiter = fetch_custom_delimiter if @str.include?("//")
 		input_list = @str.gsub("\n", delimiter).split(delimiter)
 		input_list.map(&:to_i)
+	end
+
+	def fetch_custom_delimiter
+		delimiter, @str = @str.split("\n")
+		return delimiter[-1] unless delimiter.include?("[")
+
+		delimiter.split("[")
+		         .last
+		         .chop
 	end
 end
